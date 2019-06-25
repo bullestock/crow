@@ -1,4 +1,10 @@
 #pragma once
+
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable : 4267)
+#endif
+
 #include "crow/query_string.h"
 #include "crow/http_parser_merged.h"
 #include "crow/ci_map.h"
@@ -21,3 +27,8 @@
 #include "crow/http_connection.h"
 #include "crow/http_server.h"
 #include "crow/app.h"
+
+#undef default
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
